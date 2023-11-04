@@ -3,13 +3,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 class Lucky {
     static AtomicInteger x = new AtomicInteger(0);
     static AtomicInteger count = new AtomicInteger(0);
-
     static class LuckyThread extends Thread {
         @Override
         public void run() {
             while (x.get() < 999999) {
                 int temp = x.incrementAndGet();
-                if ((temp % 10) + (temp / 10) % 10 + (temp / 100) % 10 == (temp / 1000)
+                if ((temp % 10) + (temp / 10) % 10 + (temp / 100) % 10 == (temp / 1000) //??
                         % 10 + (temp / 10000) % 10 + (temp / 100000) % 10) {
                     System.out.println(temp);
                     count.incrementAndGet();
