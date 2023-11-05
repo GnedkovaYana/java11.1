@@ -2,6 +2,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 class Lucky {
     static AtomicInteger x = new AtomicInteger(0);
+
     static AtomicInteger count = new AtomicInteger(0);
     static class LuckyThread extends Thread {
         @Override
